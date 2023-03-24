@@ -6,9 +6,9 @@ const Header = ({ children }) => (
     <h1 className='logo'>
       <a href='/bootstrap.html'>
         <span className='title'>
-          <strong>云原生</strong>应用脚手架
+          <strong>应用脚手架</strong>
         </span>
-        <span className='description'>Cloud Native App Initializer</span>
+        {/*<span className='description'>Cloud Native App Initializer</span>*/}
       </a>
     </h1>
     {children}
