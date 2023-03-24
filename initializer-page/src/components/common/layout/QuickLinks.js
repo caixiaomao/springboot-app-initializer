@@ -51,12 +51,12 @@ const QuickLinks = () => {
     */
     return (
         <ul className='quick-links'>
-            <li>
-               <span className='switch-mode'>
-                  <Switch id='theme-switch' isOn={theme === 'dark'} onChange={toggleTheme}/>
-                    {theme === 'dark' ? '深色' : '浅色'} 主题
-                </span>
-            </li>
+            {/*<li>*/}
+            {/*   <span className='switch-mode'>*/}
+            {/*      <Switch id='theme-switch' isOn={theme === 'dark'} onChange={toggleTheme}/>*/}
+            {/*        {theme === 'dark' ? '深色' : '浅色'} 主题*/}
+            {/*    </span>*/}
+            {/*</li>*/}
             <li>
                 <a
                     href='/'
