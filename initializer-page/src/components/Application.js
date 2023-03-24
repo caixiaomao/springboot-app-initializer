@@ -306,7 +306,7 @@ export default function Application() {
                 onClick={onExplore}
                 hotkey=''
               >
-                在线代码
+                查看代码
               </Button>
               {/*<Button id='share-project' onClick={onShare}>*/}
               {/*  分享...*/}
