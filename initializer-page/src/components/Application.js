@@ -297,20 +297,20 @@ export default function Application() {
                 id='generate-project'
                 variant='primary'
                 onClick={onSubmit}
-                hotkey={`${windowsUtils.symb} + ⏎`}
+                hotkey=''
               >
-                获取代码
+                下载代码
               </Button>
               <Button
                 id='explore-project'
                 onClick={onExplore}
-                hotkey='Ctrl + Space'
+                hotkey=''
               >
-                浏览代码
+                在线代码
               </Button>
-              <Button id='share-project' onClick={onShare}>
-                分享...
-              </Button>
+              {/*<Button id='share-project' onClick={onShare}>*/}
+              {/*  分享...*/}
+              {/*</Button>*/}
             </Footer>
           </>
         )}
