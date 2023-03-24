@@ -5,7 +5,7 @@ const Footer = ({ children }) => (
   <div className='sticky'>
     <div className='colset colset-submit'>
       <div className='left nopadding'>
-        <footer className='footer'>
+        {/*<footer className='footer'>
           <div className='footer-container'>
             © 1999-{new Date().getFullYear()} Aliyun.com
             <br />
@@ -22,7 +22,7 @@ const Footer = ({ children }) => (
               </a>
             </span>
           </div>
-        </footer>
+        </footer>*/}
       </div>
       {children && (
         <div className='right nopadding'>
