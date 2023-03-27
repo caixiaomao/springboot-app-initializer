@@ -1,54 +1,25 @@
-[English](README.md) | [简体中文](README-zh.md)
+# springboot app initializer
 
----
-# Cloud Native App Initializer
+## 模块说明
 
-## Docs
-- [Code Contribution](docs/CONTRIBUTING.md)
+- initializer-generator: 脚手架生成项目模块，在其中io.spring.start.site目录下引用了部分 start.spring.io 的基础代码。
+- initializer-page: 脚手架前端页面
+- initializer-start: 脚手架启动、打包入口模块
 
-## Code structure
-This is a Cloud Native App Initializer project derived from Spring Initializr, you can directly experience the function of the project through [start.aliyun.com](https://start.aliyun.com/), which includes the following modules:
-* initializer-generator: Generate Project Modules, part of the basic code of [start.spring.io](https://start.spring.io/) is referenced in the `io.spring.start.site` directory.
-* initializer-page: Front page
+## 编译打包
 
-## Run from source
-Please clone the project locally and make sure you have a Java 17 environment.
-
-### Build project
-
-Make sure you have python installed on your computer.
-
-In the project root directory, execute the following commands to install `Node` and `Yarn`:
 ```shell
-mvn compile -P install-yarn
-```
-In the project root directory, execute the following command to copy the static files to the target of the `initializer-generator` module:
-```shell
-mvn prepare-package
+yarn run build
 ```
 
-### Run project
-Enter the `initializer-generator` module and execute the following command to start the application:
+访问：http://127.0.0.1:7001/bootstrap.html
+
+## 常见问题
+1. 高版本 nodejs 编译报错，参考 [Error message "error:0308010C:digital envelope routines::unsupported"](https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported)，设置环境变量
+
 ```shell
-cd initializer-generator
-mvn spring-boot:run
+# CMD
+set NODE_OPTIONS=--openssl-legacy-provider
+# PowerShell
+$env:NODE_OPTIONS = "--openssl-legacy-provider"
 ```
-In the browser, enter `http://127.0.0.1:7001/bootstrap.html` to use the initializer project for project bootstrap.
-
-## Run based on Docker
-Before performing subsequent operations, please ensure that Docker has been installed in the relevant environment.
-
-### Pull image
-Execute the following command on the local command line to pull the initializer project image:
-```shell
-docker pull registry.cn-hangzhou.aliyuncs.com/cloud-native-app-initializer/initializer:latest
-```
-
-### Start the container
-Execute the following command on the local command line to start the initializer container:
-```shell
-docker run -it -p 127.0.0.1:7001:7001 registry.cn-hangzhou.aliyuncs.com/cloud-native-app-initializer/initializer:latest
-```
-
-## License
-This project is a project under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html).
