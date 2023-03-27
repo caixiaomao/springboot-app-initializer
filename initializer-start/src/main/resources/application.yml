@@ -53,3 +53,13 @@ application:
         holder: 300
       interval:
         checkoss: 30
+
+initializr:
+  name:
+    value: template
+  group-id:
+    value: com.zdww
+  version:
+    value: 0.0.1
+  description:
+    value: Spring Boot 项目模板
