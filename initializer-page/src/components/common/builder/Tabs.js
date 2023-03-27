@@ -52,7 +52,7 @@ const Tabs = ({ changeTab }) => {
           }}
           className={`list ${tab === 'list' ? 'active' : ''}`}
         >
-          <IconList /><span>分组列表</span>
+          <IconList /><span>组件列表</span>
         </a>
         {count > 0 && (
           <>
