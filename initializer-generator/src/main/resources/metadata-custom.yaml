@@ -159,6 +159,16 @@ initializr:
         artifactId: aliyun-spring-boot-dependencies
         versionProperty: aliyun-spring-boot.version
         version: 1.0.0
+      # 自定义组件版本管理
+      zdww-component:
+        groupId: com.zdww.digital
+        artifactId: zdww-component-dependencies
+        versionProperty: zdww-component-dependencies.version
+        mappings:
+          - compatibilityRange: "[2.3.0,3.0.0-M1)"
+            version: 1.0.0
+          - compatibilityRange: "[3.0.0-M1,3.1.0-M1)"
+            version: 2.0.0
     maven:
       parent:
         includeSpringBootBom: true
@@ -1545,6 +1555,7 @@ initializr:
             - rel: reference
               href: https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/spring-cloud-stream.html#spring-cloud-stream-overview-introducing
     - name: 业务组件
+      bom: zdww-component
       compatibilityRange: "[2.3.0.M1,3.1.0-M1)"
       content:
         - name: 基础支撑平台
@@ -1552,7 +1563,7 @@ initializr:
           description: 统一角色、权限、用户管理
           groupId: com.zdww.component
           artifactId: zdww-auth
-          scope: runtime
+#          scope: runtime
 #          starter: false
     - name: Hidden Group
       id: hidden-group
