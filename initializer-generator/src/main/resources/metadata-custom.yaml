@@ -78,27 +78,6 @@ initializr:
           - compatibilityRange: "[3.0.0-RC2,3.1.0-M1)"
             version: 2022.0.0-RC2
             repositories: spring-milestones
-      spring-cloud-azure:
-        groupId: com.azure.spring
-        artifactId: spring-cloud-azure-dependencies
-        versionProperty: spring-cloud-azure.version
-        mappings:
-          - compatibilityRange: "[2.5.0.M1,2.7.0-M1)"
-            version: 4.3.0
-          - compatibilityRange: "[2.7.0-M1,3.0.0-M1)"
-            version: 4.4.1
-          - compatibilityRange: "[3.0.0-M1,3.1.0-M1)"
-            version: 6.0.0-beta.3
-      spring-cloud-gcp:
-        groupId: com.google.cloud
-        artifactId: spring-cloud-gcp-dependencies
-        versionProperty: spring-cloud-gcp.version
-        additionalBoms: [ spring-cloud ]
-        mappings:
-          - compatibilityRange: "[2.4.0-M1,2.6.0-M1)"
-            version: 2.0.11
-          - compatibilityRange: "[2.6.0-M1,3.0.0-M1)"
-            version: 3.4.0
       spring-cloud-services:
         groupId: io.pivotal.spring.cloud
         artifactId: spring-cloud-services-dependencies
@@ -209,54 +188,6 @@ initializr:
         releasesEnabled: false
         snapshotsEnabled: true
   dependencies:
-    - name: Alibaba Cloud
-      bom: aliyun-spring-boot
-      content:
-        - name: Alibaba Cloud RDS
-          id: sca-rds
-          description: 阿里云关系型数据库RDS（Relational Database Service）是一种稳定可靠、可弹性伸缩的在线数据库服务，提供容灾、备份、恢复、迁移等方面的全套解决方案，彻底解决数据库运维的烦恼。
-          groupId: com.alibaba.cloud
-          artifactId: aliyun-rds-spring-boot-starter
-          starter: false
-          links:
-            - rel: reference
-              href: https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-rds-spring-boot-sample
-        - name: Alibaba Cloud Redis
-          id: sca-redis
-          description: 高可靠双机热备架构及可无缝扩展的集群架构，满足高读写性能场景及容量需弹性变配的业务需求。
-          groupId: com.alibaba.cloud
-          artifactId: aliyun-redis-spring-boot-starter
-          starter: false
-          links:
-            - rel: reference
-              href: https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-redis-spring-boot-sample
-        - name: Alibaba Cloud OSS
-          id: sca-oss
-          description: 阿里云对象存储服务（Object Storage Service，简称 OSS），是阿里云提供的海量、安全、低成本、高可靠的云存储服务.
-          groupId: com.alibaba.cloud
-          artifactId: aliyun-oss-spring-boot-starter
-          starter: false
-          links:
-            - rel: reference
-              href: https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-oss-spring-boot-sample
-        - name: Alibaba Cloud SMS
-          id: sca-sms
-          description: 覆盖全球的短信服务，友好、高效、智能的互联化通讯能力，帮助企业迅速搭建客户触达通道.
-          groupId: com.alibaba.cloud
-          artifactId: aliyun-sms-spring-boot-starter
-          starter: false
-          links:
-            - rel: reference
-              href: https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-sms-spring-boot-sample
-        - name: Alibaba Cloud SchedulerX
-          id: sca-schedulerx
-          description: 阿里中间件团队开发的一款分布式任务调度产品，提供秒级、精准、高可靠、高可用的定时任务调度服务.
-          groupId: com.alibaba.cloud
-          artifactId: aliyun-schedulerx-spring-boot-starter
-          starter: false
-          links:
-            - rel: reference
-              href: https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-schedulerx-spring-boot-sample
     - name: Spring Cloud Alibaba
       bom: spring-cloud-alibaba
       compatibilityRange: "[2.0.0.RELEASE,3.0.0]"
@@ -1613,144 +1544,6 @@ initializr:
           links:
             - rel: reference
               href: https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/spring-cloud-stream.html#spring-cloud-stream-overview-introducing
-    - name: VMware Tanzu Application Service
-      bom: spring-cloud-services
-      compatibilityRange: "[2.0.0.RELEASE,3.0.0-M1)"
-      content:
-        - name: Config Client (TAS)
-          id: scs-config-client
-          description: Config client on VMware Tanzu Application Service.
-          groupId: io.pivotal.spring.cloud
-          artifactId: spring-cloud-services-starter-config-client
-          links:
-            - rel: reference
-              href: https://docs.vmware.com/en/Spring-Cloud-Services-for-VMware-Tanzu/index.html
-          mappings:
-            - compatibilityRange: "[2.0.0.RELEASE,2.4.0-M1)"
-              starter: false
-        - name: Service Registry (TAS)
-          id: scs-service-registry
-          description: Eureka service discovery client on VMware Tanzu Application Service.
-          groupId: io.pivotal.spring.cloud
-          artifactId: spring-cloud-services-starter-service-registry
-          links:
-            - rel: reference
-              href: https://docs.vmware.com/en/Spring-Cloud-Services-for-VMware-Tanzu/index.html
-    - name: Microsoft Azure
-      bom: spring-cloud-azure
-      compatibilityRange: "[2.5.0-M1,3.1.0-M1)"
-      content:
-        - name: Azure Support
-          id: azure-support
-          groupId: com.azure.spring
-          artifactId: spring-cloud-azure-starter
-          description: Auto-configuration for Azure Services (Service Bus, Storage, Active Directory, Key Vault, and more).
-          links:
-            - rel: guide
-              href: https://spring.io/guides/gs/spring-boot-for-azure/
-              description: Deploying a Spring Boot app to Azure
-            - rel: reference
-              href: https://microsoft.github.io/spring-cloud-azure/current/reference/html/index.html
-              description: Spring Cloud Azure Reference Documentation
-            - rel: sample
-              href: https://aka.ms/spring/samples
-              description: Azure Samples
-        - name: Azure Active Directory
-          id: azure-active-directory
-          groupId: com.azure.spring
-          artifactId: spring-cloud-azure-starter-active-directory
-          description: Spring Security integration with Azure Active Directory for authentication.
-          links:
-            - rel: guide
-              href: https://aka.ms/spring/msdocs/aad
-              description: Securing a Java Web App with the Spring Boot Starter for Azure Active Directory
-            - rel: reference
-              href: https://microsoft.github.io/spring-cloud-azure/current/reference/html/index.html#spring-security-with-azure-active-directory
-            - rel: sample
-              href: https://aka.ms/spring/samples/latest/aad
-              description: Azure Active Directory Sample
-        - name: Azure Cosmos DB
-          id: azure-cosmos-db
-          compatibilityRange: "[2.5.0-M1,3.0.0-M1)"
-          groupId: com.azure.spring
-          artifactId: spring-cloud-azure-starter-data-cosmos
-          description: Fully managed NoSQL database service for modern app development, including Spring Data support.
-          links:
-            - rel: guide
-              href: https://aka.ms/spring/msdocs/cosmos
-              description: How to use Spring Boot Starter with Azure Cosmos DB SQL API
-            - rel: reference
-              href: https://microsoft.github.io/spring-cloud-azure/current/reference/html/index.html#spring-data-support
-            - rel: sample
-              href: https://aka.ms/spring/samples/latest/cosmos
-              description: Azure Cosmos DB Sample
-        - name: Azure Key Vault
-          id: azure-keyvault
-          groupId: com.azure.spring
-          artifactId: spring-cloud-azure-starter-keyvault
-          description: All key vault features are supported, e.g. manage application secrets and certificates.
-          links:
-            - rel: guide
-              href: https://aka.ms/spring/msdocs/keyvault
-              description: Read Secrets from Azure Key Vault in a Spring Boot Application
-            - rel: guide
-              href: https://aka.ms/spring/msdocs/keyvault/certificates
-              description: Securing Spring Boot Applications with Azure Key Vault Certificates
-            - rel: reference
-              href: https://microsoft.github.io/spring-cloud-azure/current/reference/html/index.html#secret-management
-            - rel: sample
-              href: https://aka.ms/spring/samples/latest/keyvault
-              description: Azure Key Vault Sample
-        - name: Azure Storage
-          id: azure-storage
-          groupId: com.azure.spring
-          artifactId: spring-cloud-azure-starter-storage
-          description: All Storage features are supported, e.g. blob, fileshare and queue.
-          links:
-            - rel: guide
-              href: https://aka.ms/spring/msdocs/storage
-              description: How to use the Spring Boot starter for Azure Storage
-            - rel: reference
-              href: https://microsoft.github.io/spring-cloud-azure/current/reference/html/index.html#resource-handling
-            - rel: sample
-              href: https://aka.ms/spring/samples/latest/storage
-              description: Azure Storage Sample
-    - name: Google Cloud Platform
-      bom: spring-cloud-gcp
-      compatibilityRange: "[2.4.0-M1,3.0.0-M1)"
-      content:
-        - name: GCP Support
-          id: cloud-gcp
-          description: Contains auto-configuration support for every Spring Cloud GCP integration. Most of the auto-configuration code is only enabled if other dependencies are added to the classpath.
-          groupId: com.google.cloud
-          artifactId: spring-cloud-gcp-starter
-          links:
-            - rel: reference
-              href: https://googlecloudplatform.github.io/spring-cloud-gcp/reference/html/index.html
-            - rel: guide
-              href: https://github.com/GoogleCloudPlatform/spring-cloud-gcp/tree/main/spring-cloud-gcp-samples
-              description: GCP Samples
-        - name: GCP Messaging
-          id: cloud-gcp-pubsub
-          description: Adds the GCP Support entry and all the required dependencies so that the Google Cloud Pub/Sub integration work out of the box.
-          groupId: com.google.cloud
-          artifactId: spring-cloud-gcp-starter-pubsub
-          links:
-            - rel: reference
-              href: https://googlecloudplatform.github.io/spring-cloud-gcp/reference/html/index.html#cloud-pubsub
-            - rel: guide
-              href: https://github.com/GoogleCloudPlatform/spring-cloud-gcp/tree/main/spring-cloud-gcp-samples/spring-cloud-gcp-pubsub-sample
-              description: GCP Pub/Sub Sample
-        - name: GCP Storage
-          id: cloud-gcp-storage
-          description: Adds the GCP Support entry and all the required dependencies so that the Google Cloud Storage integration work out of the box.
-          groupId: com.google.cloud
-          artifactId: spring-cloud-gcp-starter-storage
-          links:
-            - rel: reference
-              href: https://googlecloudplatform.github.io/spring-cloud-gcp/reference/html/index.html#cloud-storage
-            - rel: guide
-              href: https://github.com/GoogleCloudPlatform/spring-cloud-gcp/tree/main/spring-cloud-gcp-samples/spring-cloud-gcp-storage-resource-sample
     - name: Hidden Group
       id: hidden-group
       hide: true
@@ -1760,38 +1553,38 @@ initializr:
           id: cloudshell
           codeOnly: true
   types:
-    - name: Maven Project
+    - name: Maven 项目
       id: maven-project
-      description: Generate a Maven based project archive.
+      description: 生成基于 Maven 管理依赖的项目
       tags:
         build: maven
         format: project
       default: true
       action: /starter.zip
-    - name: Maven POM
-      id: maven-build
-      description: Generate a Maven pom.xml.
-      tags:
-        build: maven
-        format: build
-      default: false
-      action: /pom.xml
-    - name: Gradle Project
+#    - name: Maven POM
+#      id: maven-build
+#      description: Generate a Maven pom.xml.
+#      tags:
+#        build: maven
+#        format: build
+#      default: false
+#      action: /pom.xml
+    - name: Gradle 项目
       id: gradle-project
-      description: Generate a Gradle based project archive.
+      description: 生成基于 Gradle 管理依赖的项目
       tags:
         build: gradle
         format: project
       default: false
       action: /starter.zip
-    - name: Gradle Config
-      id: gradle-build
-      description: Generate a Gradle build file.
-      tags:
-        build: gradle
-        format: build
-      default: false
-      action: /build.gradle
+#    - name: Gradle Config
+#      id: gradle-build
+#      description: Generate a Gradle build file.
+#      tags:
+#        build: gradle
+#        format: build
+#      default: false
+#      action: /build.gradle
   packagings:
     - name: Jar
       id: jar
@@ -1800,7 +1593,7 @@ initializr:
       id: war
       default: false
   javaVersions:
-    - id: 19
+#    - id: 19
     - id: 17
     - id: 11
     - id: 1.8
@@ -1813,9 +1606,9 @@ initializr:
     - name: Kotlin
       id: kotlin
       default: false
-    - name: Groovy
-      id: groovy
-      default: false
+#    - name: Groovy
+#      id: groovy
+#      default: false
   bootVersions:
     - name: 3.0.0
       id: 3.0.0
