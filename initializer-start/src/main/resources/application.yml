@@ -43,7 +43,7 @@ logging:
     org.springframework.jndi: warn
 
 application:
-  metadata-path: classpath:metadata.yaml
+  metadata-path: classpath:metadata-custom.yaml
   democode-path: classpath:/templates/codes
   cache:
     repo:
