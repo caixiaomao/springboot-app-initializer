@@ -6,6 +6,10 @@
 - initializer-page: 脚手架前端页面
 - initializer-start: 脚手架启动、打包入口模块
 
+## springboot 版本兼容信息
+
+- https://start.spring.io/actuator/info
+
 ## 编译打包
 
 ```shell
