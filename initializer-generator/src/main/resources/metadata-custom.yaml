@@ -1544,6 +1544,16 @@ initializr:
           links:
             - rel: reference
               href: https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/spring-cloud-stream.html#spring-cloud-stream-overview-introducing
+    - name: 业务组件
+      compatibilityRange: "[2.3.0.M1,3.1.0-M1)"
+      content:
+        - name: 基础支撑平台
+          id: zdww-component-auth
+          description: 统一角色、权限、用户管理
+          groupId: com.zdww.component
+          artifactId: zdww-auth
+          scope: runtime
+#          starter: false
     - name: Hidden Group
       id: hidden-group
       hide: true
