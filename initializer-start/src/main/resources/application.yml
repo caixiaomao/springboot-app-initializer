@@ -10,8 +10,8 @@ server:
   forward-headers-strategy: native
 
 management:
-  server:
-    port: 7002
+#  server:
+#    port: 7002
   endpoints:
     web:
       exposure:
